@@ -3,6 +3,7 @@ import { RouterModule, Routes, mapToCanActivate } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { AuthenticationGuard } from 'src/app/@shared/guards/authentication.guard';
+import { ConferenceLinkComponent } from './conference-link/conference-link.component';
 
 const routes: Routes = [
   {
@@ -12,8 +13,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    component: ConferenceLinkComponent,
   },
+  // {
+  //   path: 'home',
+  //   component: HomeComponent,
+  // },
   {
     path: 'translators/details/:name',
     component: HomeComponent,

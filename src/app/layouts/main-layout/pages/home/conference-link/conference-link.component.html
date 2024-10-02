@@ -1,0 +1,61 @@
+<div class="conference-modal">
+  <div>
+    <h3>Create a Video Call</h3>
+    <ul>
+      <li>1. Create a Unique Link</li>
+      <li>2. Click Copy</li>
+      <li>3. Paste the link in an email or text message</li>
+      <li>4. After entering video call, select the language to be translated</li>
+    </ul>
+  </div>
+
+  <div class="sub-modal">
+    <h5 class="modal-title">Start Call</h5>
+    <div class="modal-body">
+      <div class="d-flex flex-column flex-md-row c-btn gap-1">
+        <div class="input-group-prepend d-flex w-100">
+          <span class="input-group-text h-100 text-truncate pe-0 text-black c-pointer h-48-px" [title]="originUrl">{{ originUrl }}</span>
+          <div class="input-area d-flex form-control h-48-px position-relative">
+            <input
+            type="text"
+            name="cSlug"
+            [(ngModel)]="link"
+            (ngModelChange)="link = slugify($event)"
+            placeholder="create your link here"
+            #linkInput
+            />
+            <fa-icon *ngIf="link" [icon]="['fas', 'xmark']" class="me-2 position-absolute end-0" (click)="clearLink()"  />
+          </div>
+        </div>
+        <div class="d-flex gap-3 gap-md-1 mt-4 mt-md-0">
+          <button class="btn btn-secondary p-1" [disabled]="!link" [appCopyClipboard]="originUrl + link">
+            <div class="d-center">
+              <fa-icon
+                title="Copy link"
+                class="font-20-px"
+                [icon]="['fas', 'copy']"
+                [fixedWidth]="true"
+              />
+              Copy
+            </div>
+          </button>
+          <button class="btn btn-secondary p-1"  
+          title="Start Conference"
+          class="btn btn-success text-white"
+          (click)="openConferenceCall()"
+          [disabled]="!link">
+            <div class="d-center">
+              <fa-icon
+                title="Start Conference"
+                class="font-20-px"
+                [icon]="['fas', 'phone']"
+                [fixedWidth]="true"
+              />
+              Start
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

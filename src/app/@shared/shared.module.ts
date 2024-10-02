@@ -139,7 +139,7 @@ const sharedComponents = [
   EditPostModalComponent,
   AppointmentCallComponent,
   AppointmentModalComponent,
-  ConferenceLinkComponent  
+  ConferenceLinkComponent
 ];
 
 const sharedModules = [
