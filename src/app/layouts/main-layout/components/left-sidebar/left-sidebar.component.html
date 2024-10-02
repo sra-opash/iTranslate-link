@@ -27,7 +27,7 @@
           class="d-flex gap-4"
           routerLink="/home"
           routerLinkActive="active"
-          (click)="reloadPage()"
+          (dblclick)="reloadPage()"
         >
           <fa-icon [icon]="['fas', 'home']" class="font-24-px" />
           <span>Home</span>
@@ -43,7 +43,7 @@
           <span>Create Unique Link</span>
         </a>
       </li>
-      <li class="ms-1">
+      <!-- <li class="ms-1">
         <a
           class="d-flex gap-4"
           routerLink="/translators"
@@ -99,7 +99,6 @@
           routerLinkActive="active"
           (click)="notificationNavigation()"
         >
-          <!-- (click)="closeSidebar()" -->
           <span
             *ngIf="sharedService.isNotify"
             class="abs-area position-absolute d-center smtxt"
@@ -107,7 +106,7 @@
           <fa-icon [icon]="['fas', 'bell']" class="font-24-px" />
           <span>Notifications</span>
         </a>
-      </li>
+      </li> -->
       <li class="ms-1">
         <a
           class="d-flex gap-4"
@@ -116,7 +115,7 @@
           (click)="closeSidebar()"
         >
           <fa-icon [icon]="['fas', 'gear']" class="font-20-px" />
-          <span>View Profile</span>
+          <span>Profile</span>
         </a>
       </li>
       <!-- <li>
@@ -129,7 +128,7 @@
           <fa-icon [icon]="['fas', 'link']" class="font-24-px" />
           <span>1776 Token</span>
         </a>
-      </li> -->
+      </li>
       <li>
         <a
           href="https://localfoods.market/"
@@ -151,7 +150,7 @@
           <fa-icon [icon]="['fas', 'link']" class="font-24-px" />
           <span>Lamars List</span>
         </a>
-      </li>
+      </li> -->
       <!-- <li>
         <a class="d-flex gap-4" (click)="openWalletPopUp()">
           <fa-icon [icon]="['fas', 'download']" class="font-24-px" />
@@ -165,16 +164,16 @@
         </a>
       </li> -->
 
-      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <li routerLinkActive="active" [routerLink]="'settings/edit-profile/' + profileId" [routerLinkActiveOptions]="{ exact: true }">
         <div
           class="d-flex gap-4 toggle-dropdown align-items-center"
-          (click)="collapse.toggle()"
-        >
+          >
+          <!-- (click)="collapse.toggle()" -->
           <fa-icon [icon]="['fas', 'gear']" class="font-24-px" />
           <span class="me-auto">Settings</span>
-          <fa-icon
+          <!-- <fa-icon
             [icon]="['fas', collapse.shown ? 'chevron-down' : 'chevron-up']"
-          />
+          /> -->
         </div>
 
         <div #collapse="ngbCollapse" [(ngbCollapse)]="isSettingMenuCollapse">
