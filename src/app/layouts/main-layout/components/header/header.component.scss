@@ -4,6 +4,10 @@
   box-shadow: var(--box-shadow);
   z-index: 999;
 
+  .text-transform{
+    text-transform: none;
+  }
+
   .navbar {
     .navbar-nav {
       li {

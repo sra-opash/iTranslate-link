@@ -6,6 +6,7 @@ import { BreakpointService } from 'src/app/@shared/services/breakpoint.service';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 import { ResearchSidebarComponent } from './components/research-sidebar/research-sidebar.component';
 import { RightSidebarComponent } from './components/right-sidebar/right-sidebar.component';
+import { TokenStorageService } from 'src/app/@shared/services/token-storage.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -28,6 +29,7 @@ export class MainLayoutComponent {
     private route: ActivatedRoute,
     private offcanvasService: NgbOffcanvas,
     public breakpointService: BreakpointService,
+    public tokenService: TokenStorageService,
   ) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd || event instanceof Scroll),
